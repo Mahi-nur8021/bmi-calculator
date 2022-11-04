@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+
+  
+   <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 190px;
+   
+}
+body{
+   background-color: skyblue;
+}
+ 
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: rgb(238, 228, 228);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: rgb(233, 236, 236);
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: rgb(255, 254, 254);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: rgb(247, 247, 247);
+  transform: translateY(-30px);
+}
+.container{
+   position: relative;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+.cont{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   flex-direction: column;
+   
+}
+ .content{
+   background-color: rgb(2, 1, 1);
+   padding: 30px 20px;
+   border-radius: 10px;
+   
+ }
+ #btn{
+   margin-top: 10px;
+ }
+ #output{
+   color: white;
+   text-align: right;
+   margin-top: 10px;
+   margin-bottom: 15px;
+ }
+
+ /* button styling */
+ button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+ margin-top: 30px;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+   </style>  
+         
+       
+       
+   
+</head>
+<body>
+    <div class="cont"> 
+      <div class="content">  
+   <div class="form-control ">
+      <input type="text" required="" id="height">
+      <label>
+          <span style="transition-delay:0ms">H</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">g</span><span style="transition-delay:200ms">h</span><span style="transition-delay:250ms">t</span><span 
+          style="transition-delay:300ms"> </span><span
+          style="transition-delay:350ms">I</span><span style="transition-delay:400ms">n</span><span style="transition-delay:450ms"> </span><span 
+          style="transition-delay:500ms">M</span><span
+          style="transition-delay:550ms">i</span><span 
+          style="transition-delay:600ms">t</span><span
+          style="transition-delay:650ms">e</span><span 
+          style="transition-delay:700ms">r</span>
+
+      </label>
+  </div>
+    
+
+  <div class="form-control">
+   <input type="text" required="" id="weight">
+   <label>
+       <span style="transition-delay:0ms">W</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">g</span><span style="transition-delay:200ms">h</span><span style="transition-delay:250ms">t</span><span 
+       style="transition-delay:300ms"> </span><span
+       style="transition-delay:350ms">I</span><span style="transition-delay:400ms">n</span><span style="transition-delay:450ms"> </span><span 
+       style="transition-delay:500ms">K</span><span
+        
+       style="transition-delay:600ms">g</span>
+
+   </label>
+   <p id="output"></p>
+   <button id="btn">
+      <span class="shadow"></span>
+      <span class="edge"></span>
+      <span class="front text">Calculate
+      </span>
+    </button>
+   
+</div>
+</div>
+ </div>
+<script>
+   let btn=document.getElementById("btn");
+
+   btn.addEventListener('click',function(){
+      let height=document.getElementById("height").value;
+      let weight=document.getElementById("weight").value;
+
+      let result=document.getElementById('output')
+         let height_status=false;
+         let weight_status=false;
+      if(height==="0"|| isNaN(height)|| height===''){
+         
+        alert("Please input valid height")
+      }
+      else{
+         height_status=true;
+      };
+
+      if(weight==='0'|| isNaN(weight)|| weight===''){
+         alert("Please input valid weight")
+      }
+      else{
+         weight_status=true;
+      }
+
+      //if height status and weight status true 
+
+      if(height_status&& weight_status){
+         let bmi=(weight/height**2) ;
+         
+         if(bmi>0){
+            result.innerHTML="Your BMI is : "+bmi.toFixed(2)
+         }
+      }
+
+   })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
